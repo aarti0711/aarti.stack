@@ -225,7 +225,6 @@
       opacity: 1;
     }
 
-    /* Code block mobile scroll */
     .code-block {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
@@ -252,7 +251,6 @@
 
   <!-- Navigation -->
   <nav class="fixed top-4 left-3 right-3 md:top-6 md:left-1/2 md:-translate-x-1/2 md:right-auto z-50 nav-blur rounded-2xl md:rounded-full px-4 py-2.5 md:px-5 border border-white/10 glow-white">
-    <!-- Desktop Nav -->
     <div class="hidden md:flex items-center gap-1">
       <a href="#hero" class="text-sm font-semibold text-white px-4 py-2 rounded-full hover:bg-white/5 transition-colors">Home</a>
       <a href="#about" class="text-sm font-medium text-neutral-400 px-4 py-2 rounded-full hover:bg-white/5 hover:text-white transition-colors">About</a>
@@ -261,14 +259,12 @@
       <a href="#projects" class="text-sm font-medium text-neutral-400 px-4 py-2 rounded-full hover:bg-white/5 hover:text-white transition-colors">Projects</a>
       <a href="#contact" class="text-sm font-medium text-neutral-400 px-4 py-2 rounded-full hover:bg-white/5 hover:text-white transition-colors">Contact</a>
     </div>
-    <!-- Mobile Nav Button -->
     <div class="flex md:hidden items-center justify-between">
       <span class="text-sm font-semibold text-white">aarti.dev</span>
       <button id="mobileToggle" class="p-2 rounded-xl hover:bg-white/5 transition-colors -mr-1">
         <iconify-icon icon="lucide:menu" width="20" class="text-neutral-300" id="menuIcon"></iconify-icon>
       </button>
     </div>
-    <!-- Mobile Menu -->
     <div id="mobileMenu" class="mobile-menu md:hidden">
       <div class="flex flex-col gap-0.5 pt-3 pb-2 border-t border-white/5 mt-2">
         <a href="#hero" class="text-sm font-medium text-neutral-400 px-4 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-colors">Home</a>
@@ -284,31 +280,26 @@
   <!-- Hero Section -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center px-5 pt-28 pb-16 md:px-6 md:pt-32 md:pb-20">
     <div class="relative z-10 max-w-5xl mx-auto text-center w-full">
-      <!-- Badge -->
       <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6 md:mb-8">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
         <span class="text-[11px] md:text-xs font-medium text-neutral-400 tracking-wide">Open to Opportunities</span>
       </div>
 
-      <!-- Name -->
       <h1 class="reveal text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[1.05] mb-4 md:mb-6" style="transition-delay:100ms;">
         <span class="text-gradient-subtle">Aarti</span><br/>
         <span class="text-gradient">Makwana</span>
       </h1>
 
-      <!-- Title -->
       <div class="reveal flex items-center justify-center gap-3 mb-6 md:mb-8" style="transition-delay:200ms;">
         <div class="h-px w-8 md:w-12 bg-gradient-to-r from-transparent to-indigo-500/50"></div>
         <p class="text-base md:text-xl font-light text-neutral-400 tracking-wide">Software Developer</p>
         <div class="h-px w-8 md:w-12 bg-gradient-to-l from-transparent to-indigo-500/50"></div>
       </div>
 
-      <!-- Summary -->
       <p class="reveal text-sm md:text-base font-light text-neutral-500 leading-relaxed max-w-2xl mx-auto mb-10 md:mb-12 px-2" style="transition-delay:300ms;">
         Java Developer with 4.5 years of experience building scalable enterprise applications using Java, Spring Boot, Hibernate, REST APIs, and Microservices architecture.
       </p>
 
-      <!-- CTA Buttons -->
       <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 px-4" style="transition-delay:400ms;">
         <a href="#projects" class="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5 bg-white text-black text-sm font-medium rounded-full hover:bg-neutral-200 transition-colors">
           View Projects
@@ -320,7 +311,6 @@
         </a>
       </div>
 
-      <!-- Stats -->
       <div class="reveal grid grid-cols-3 gap-4 md:gap-8 max-w-md md:max-w-lg mx-auto mt-14 md:mt-20" style="transition-delay:500ms;">
         <div class="text-center">
           <div class="stat-number text-gradient" data-target="4.5">0</div>
@@ -337,7 +327,6 @@
       </div>
     </div>
 
-    <!-- Scroll indicator -->
     <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float" style="animation-duration:4s;">
       <span class="text-[10px] text-neutral-600 uppercase tracking-widest">Scroll</span>
       <div class="w-5 h-8 rounded-full border border-white/10 flex items-start justify-center p-1.5">
@@ -355,7 +344,6 @@
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-        <!-- Left: Code Visual -->
         <div class="reveal-card relative order-2 md:order-1">
           <div class="relative rounded-2xl md:rounded-3xl overflow-hidden glass p-5 md:p-8 grid-pattern">
             <div class="code-block">
@@ -382,7 +370,6 @@
           </div>
         </div>
 
-        <!-- Right: Text -->
         <div class="reveal order-1 md:order-2" style="transition-delay:200ms;">
           <p class="text-sm md:text-base font-light text-neutral-400 leading-relaxed mb-5 md:mb-6">
             I'm a Java Developer with a proven track record of delivering robust solutions across government and enterprise projects at ISRO's Space Application Centre. I specialize in designing secure, high-performance backend systems and RESTful APIs.
@@ -410,7 +397,6 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-        <!-- Languages -->
         <div class="reveal-card hover-card glass rounded-2xl p-5 md:p-6" style="transition-delay:0ms;">
           <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 md:mb-5">
             <iconify-icon icon="lucide:code-2" width="20" class="text-blue-400"></iconify-icon>
@@ -433,7 +419,6 @@
           </div>
         </div>
 
-        <!-- Frameworks -->
         <div class="reveal-card hover-card glass rounded-2xl p-5 md:p-6" style="transition-delay:100ms;">
           <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 md:mb-5">
             <iconify-icon icon="lucide:layers" width="20" class="text-emerald-400"></iconify-icon>
@@ -456,7 +441,6 @@
           </div>
         </div>
 
-        <!-- APIs & Web -->
         <div class="reveal-card hover-card glass rounded-2xl p-5 md:p-6" style="transition-delay:200ms;">
           <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4 md:mb-5">
             <iconify-icon icon="lucide:globe" width="20" class="text-purple-400"></iconify-icon>
@@ -479,7 +463,6 @@
           </div>
         </div>
 
-        <!-- Databases -->
         <div class="reveal-card hover-card glass rounded-2xl p-5 md:p-6" style="transition-delay:300ms;">
           <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4 md:mb-5">
             <iconify-icon icon="lucide:database" width="20" class="text-amber-400"></iconify-icon>
@@ -494,7 +477,6 @@
           </div>
         </div>
 
-        <!-- Tools -->
         <div class="reveal-card hover-card glass rounded-2xl p-5 md:p-6" style="transition-delay:400ms;">
           <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4 md:mb-5">
             <iconify-icon icon="lucide:wrench" width="20" class="text-cyan-400"></iconify-icon>
@@ -513,7 +495,6 @@
           </div>
         </div>
 
-        <!-- Frontend -->
         <div class="reveal-card hover-card glass rounded-2xl p-5 md:p-6" style="transition-delay:500ms;">
           <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center mb-4 md:mb-5">
             <iconify-icon icon="lucide:monitor" width="20" class="text-pink-400"></iconify-icon>
@@ -531,7 +512,6 @@
         </div>
       </div>
 
-      <!-- Languages Spoken -->
       <div class="reveal mt-8 md:mt-12 glass rounded-2xl p-4 md:p-6 flex flex-wrap items-center justify-center gap-4 md:gap-8">
         <span class="text-[10px] md:text-xs text-neutral-500 uppercase tracking-wider font-medium">Spoken</span>
         <div class="flex items-center gap-1.5"><span class="text-base md:text-lg">🇮🇳</span><span class="text-xs md:text-sm text-neutral-300">English</span></div>
@@ -552,7 +532,6 @@
       <div class="relative pl-10 md:pl-16">
         <div class="timeline-line"></div>
 
-        <!-- ISRO -->
         <div class="reveal-card relative mb-8 md:mb-12" style="transition-delay:0ms;">
           <div class="timeline-dot"></div>
           <div class="glass rounded-2xl p-5 md:p-8 hover-card">
@@ -597,7 +576,6 @@
           </div>
         </div>
 
-        <!-- Aspire Soft Serv -->
         <div class="reveal-card relative" style="transition-delay:200ms;">
           <div class="timeline-dot secondary"></div>
           <div class="glass rounded-2xl p-5 md:p-8 hover-card">
@@ -647,7 +625,6 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-        <!-- Project 1 -->
         <div class="reveal-card project-card relative glass rounded-2xl p-5 md:p-8 hover-card overflow-hidden" style="transition-delay:0ms;">
           <div class="relative z-10">
             <div class="flex items-center justify-between mb-4 md:mb-5">
@@ -675,7 +652,6 @@
           </div>
         </div>
 
-        <!-- Project 2 -->
         <div class="reveal-card project-card relative glass rounded-2xl p-5 md:p-8 hover-card overflow-hidden" style="transition-delay:100ms;">
           <div class="relative z-10">
             <div class="flex items-center justify-between mb-4 md:mb-5">
@@ -703,7 +679,6 @@
           </div>
         </div>
 
-        <!-- Project 3 -->
         <div class="reveal-card project-card relative glass rounded-2xl p-5 md:p-8 hover-card overflow-hidden" style="transition-delay:200ms;">
           <div class="relative z-10">
             <div class="flex items-center justify-between mb-4 md:mb-5">
@@ -731,7 +706,6 @@
           </div>
         </div>
 
-        <!-- Project 4 -->
         <div class="reveal-card project-card relative glass rounded-2xl p-5 md:p-8 hover-card overflow-hidden" style="transition-delay:300ms;">
           <div class="relative z-10">
             <div class="flex items-center justify-between mb-4 md:mb-5">
@@ -757,7 +731,6 @@
           </div>
         </div>
 
-        <!-- Project 5 - Full Width -->
         <div class="reveal-card project-card relative glass rounded-2xl p-5 md:p-8 hover-card overflow-hidden md:col-span-2" style="transition-delay:400ms;">
           <div class="relative z-10">
             <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
@@ -867,12 +840,12 @@
           </div>
         </div>
 
-        <!-- Download Resume -->
+        <!-- ✅ DOWNLOAD RESUME BUTTON WITH HREF -->
         <div class="pt-5 md:pt-6 text-center">
-          <button id="downloadBtn" class="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 md:px-8 md:py-4 bg-white text-black text-sm font-medium rounded-full hover:bg-neutral-200 transition-all glow-indigo w-full sm:w-auto">
+          <a href="Aarti_Resume.pdf" download class="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 md:px-8 md:py-4 bg-white text-black text-sm font-medium rounded-full hover:bg-neutral-200 transition-all glow-indigo w-full sm:w-auto" style="text-decoration:none;">
             <iconify-icon icon="lucide:download" width="17" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
             Download Resume
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -898,7 +871,6 @@
   </div>
 
   <script>
-    // Mobile menu toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     const menuIcon = document.getElementById('menuIcon');
@@ -918,7 +890,6 @@
       });
     });
 
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -931,7 +902,6 @@
       });
     });
 
-    // Scroll reveal
     const revealElements = document.querySelectorAll('.reveal, .reveal-card');
     const skillBars = document.querySelectorAll('.skill-bar-fill');
 
@@ -958,7 +928,6 @@
 
     skillBars.forEach(el => skillObserver.observe(el));
 
-    // Counter animation
     const statNumbers = document.querySelectorAll('.stat-number');
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -985,20 +954,6 @@
 
     statNumbers.forEach(el => counterObserver.observe(el));
 
-    // Toast
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      const toastMsg = document.getElementById('toastMsg');
-      toastMsg.textContent = msg;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 3000);
-    }
-
-    document.getElementById('downloadBtn').addEventListener('click', () => {
-      showToast('📄 Connect your actual PDF to enable download.');
-    });
-
-    // Active nav highlight
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
 
