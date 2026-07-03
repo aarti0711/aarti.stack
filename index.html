@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aarti Makwana — Software Developer</title>
+  <title>aarti.dev — Software Developer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -24,12 +24,10 @@
     ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
     ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
 
-    /* Background columns */
     .bg-cols { position: fixed; inset: 0; z-index: 0; display: flex; pointer-events: none; }
     .bg-cols div { flex: 1; border-right: 1px solid rgba(255,255,255,0.03); }
     .bg-cols div:last-child { border-right: none; }
 
-    /* Glass panel */
     .glass {
       background: rgba(255,255,255,0.03);
       backdrop-filter: blur(16px);
@@ -37,7 +35,6 @@
       border: 1px solid rgba(255,255,255,0.08);
     }
 
-    /* Text gradient */
     .text-gradient {
       background: linear-gradient(to right, #818cf8, #c084fc, #38bdf8);
       -webkit-background-clip: text;
@@ -51,11 +48,9 @@
       background-clip: text;
     }
 
-    /* Glow */
     .glow-indigo { box-shadow: 0 25px 50px -12px rgba(99,102,241,0.1); }
-    .glow-white { box-shadow: 0 0 40px rgba(255,255,255,0.06); }
+    .glow-white { box-shadow: 0 0 20px rgba(0,0,0,0.3); }
 
-    /* Animations */
     @keyframes float {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
       50% { transform: translateY(-20px) rotate(2deg); }
@@ -63,25 +58,6 @@
     @keyframes pulse-glow {
       0%, 100% { opacity: 0.3; transform: scale(1); filter: blur(100px); }
       50% { opacity: 0.6; transform: scale(1.1); filter: blur(120px); }
-    }
-    @keyframes fade-up {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fade-in {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slide-right {
-      from { width: 0%; }
-      to { width: var(--target-width); }
-    }
-    @keyframes count-up {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes spin-slow {
-      to { transform: rotate(360deg); }
     }
 
     .animate-float { animation: float 10s ease-in-out infinite; }
@@ -106,7 +82,6 @@
       transform: perspective(1000px) rotateX(0deg) translateY(0) scale(1);
     }
 
-    /* Skill bar animation */
     .skill-bar-fill {
       width: 0%;
       transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -115,10 +90,9 @@
       width: var(--target-width);
     }
 
-    /* Timeline */
     .timeline-line {
       position: absolute;
-      left: 23px;
+      left: 15px;
       top: 0;
       bottom: 0;
       width: 2px;
@@ -131,7 +105,7 @@
       border: 2px solid #050505;
       box-shadow: 0 0 15px rgba(99,102,241,0.4);
       position: absolute;
-      left: 18px;
+      left: 10px;
       top: 8px;
       z-index: 2;
     }
@@ -140,17 +114,17 @@
       box-shadow: 0 0 15px rgba(168,85,247,0.4);
     }
 
-    /* Hover card effect */
     .hover-card {
       transition: all 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    .hover-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 30px 60px -12px rgba(0,0,0,0.5);
-      border-color: rgba(255,255,255,0.15);
+    @media (hover: hover) {
+      .hover-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px -12px rgba(0,0,0,0.5);
+        border-color: rgba(255,255,255,0.15);
+      }
     }
 
-    /* Project card shine */
     .project-card::before {
       content: '';
       position: absolute;
@@ -161,16 +135,16 @@
       border-radius: inherit;
       pointer-events: none;
     }
-    .project-card:hover::before { opacity: 1; }
+    @media (hover: hover) {
+      .project-card:hover::before { opacity: 1; }
+    }
 
-    /* Nav blur */
     .nav-blur {
       background: rgba(5,5,5,0.7);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
     }
 
-    /* Badge */
     .tech-badge {
       display: inline-flex;
       align-items: center;
@@ -184,20 +158,17 @@
       color: #a5b4fc;
       transition: all 300ms;
     }
-    .tech-badge:hover {
-      background: rgba(99,102,241,0.2);
-      border-color: rgba(99,102,241,0.4);
-    }
 
-    /* Stat counter */
     .stat-number {
-      font-size: 48px;
+      font-size: 36px;
       font-weight: 600;
       line-height: 1;
       letter-spacing: -0.025em;
     }
+    @media (min-width: 768px) {
+      .stat-number { font-size: 48px; }
+    }
 
-    /* Grid pattern */
     .grid-pattern {
       background-image:
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
@@ -205,12 +176,11 @@
       background-size: 60px 60px;
     }
 
-    /* Contact link */
     .contact-link {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 20px 24px;
+      gap: 14px;
+      padding: 16px 18px;
       border-radius: 16px;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.08);
@@ -218,14 +188,15 @@
       text-decoration: none;
       color: #fff;
     }
-    .contact-link:hover {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(99,102,241,0.3);
-      transform: translateX(8px);
-      box-shadow: 0 0 30px rgba(99,102,241,0.08);
+    @media (hover: hover) {
+      .contact-link:hover {
+        background: rgba(255,255,255,0.06);
+        border-color: rgba(99,102,241,0.3);
+        transform: translateX(8px);
+        box-shadow: 0 0 30px rgba(99,102,241,0.08);
+      }
     }
 
-    /* Mobile menu */
     .mobile-menu {
       max-height: 0;
       overflow: hidden;
@@ -233,30 +204,38 @@
     }
     .mobile-menu.open { max-height: 400px; }
 
-    /* Toast */
     .toast {
       position: fixed;
-      bottom: 32px;
+      bottom: 24px;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
-      padding: 14px 28px;
+      padding: 12px 24px;
       border-radius: 12px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       z-index: 9999;
       transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s;
       opacity: 0;
       pointer-events: none;
+      max-width: calc(100vw - 48px);
+      text-align: center;
     }
     .toast.show {
       transform: translateX(-50%) translateY(0);
       opacity: 1;
     }
 
-    @media (max-width: 768px) {
-      .stat-number { font-size: 36px; }
-      .timeline-line { left: 15px; }
-      .timeline-dot { left: 10px; }
+    /* Code block mobile scroll */
+    .code-block {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .code-block::-webkit-scrollbar { height: 3px; }
+    .code-block::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+
+    @media (min-width: 768px) {
+      .timeline-line { left: 23px; }
+      .timeline-dot { left: 18px; }
     }
   </style>
 </head>
@@ -268,88 +247,98 @@
   </div>
 
   <!-- Ambient Glows -->
-  <div class="fixed top-0 left-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full animate-pulse-glow pointer-events-none" style="filter:blur(120px);"></div>
-  <div class="fixed bottom-0 right-0 w-[400px] h-[400px] bg-purple-500/10 rounded-full animate-pulse-glow pointer-events-none" style="filter:blur(100px); animation-delay: 3s;"></div>
+  <div class="fixed top-0 left-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-indigo-500/10 rounded-full animate-pulse-glow pointer-events-none" style="filter:blur(120px);"></div>
+  <div class="fixed bottom-0 right-0 w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-purple-500/10 rounded-full animate-pulse-glow pointer-events-none" style="filter:blur(100px); animation-delay: 3s;"></div>
 
   <!-- Navigation -->
-  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 nav-blur rounded-full px-5 py-2.5 border border-white/10 glow-white" style="box-shadow: 0 0 20px rgba(0,0,0,0.3);">
-    <div class="flex items-center gap-1">
+  <nav class="fixed top-4 left-3 right-3 md:top-6 md:left-1/2 md:-translate-x-1/2 md:right-auto z-50 nav-blur rounded-2xl md:rounded-full px-4 py-2.5 md:px-5 border border-white/10 glow-white">
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-1">
       <a href="#hero" class="text-sm font-semibold text-white px-4 py-2 rounded-full hover:bg-white/5 transition-colors">Home</a>
       <a href="#about" class="text-sm font-medium text-neutral-400 px-4 py-2 rounded-full hover:bg-white/5 hover:text-white transition-colors">About</a>
       <a href="#skills" class="text-sm font-medium text-neutral-400 px-4 py-2 rounded-full hover:bg-white/5 hover:text-white transition-colors">Skills</a>
       <a href="#experience" class="text-sm font-medium text-neutral-400 px-4 py-2 rounded-full hover:bg-white/5 hover:text-white transition-colors">Experience</a>
-      <a href="#projects" class="text-sm font-medium text-neutral-400 px-4 py-2 rounded-full hover:bg-white/5 hover:text-white transition-colors hidden md:block">Projects</a>
-      <a href="#contact" class="text-sm font-medium text-neutral-400 px-4 py-2 rounded-full hover:bg-white/5 hover:text-white transition-colors hidden md:block">Contact</a>
-      <button id="mobileToggle" class="md:hidden ml-2 p-2 rounded-full hover:bg-white/5 transition-colors">
-        <iconify-icon icon="lucide:menu" width="18" class="text-neutral-400"></iconify-icon>
+      <a href="#projects" class="text-sm font-medium text-neutral-400 px-4 py-2 rounded-full hover:bg-white/5 hover:text-white transition-colors">Projects</a>
+      <a href="#contact" class="text-sm font-medium text-neutral-400 px-4 py-2 rounded-full hover:bg-white/5 hover:text-white transition-colors">Contact</a>
+    </div>
+    <!-- Mobile Nav Button -->
+    <div class="flex md:hidden items-center justify-between">
+      <span class="text-sm font-semibold text-white">aarti.dev</span>
+      <button id="mobileToggle" class="p-2 rounded-xl hover:bg-white/5 transition-colors -mr-1">
+        <iconify-icon icon="lucide:menu" width="20" class="text-neutral-300" id="menuIcon"></iconify-icon>
       </button>
     </div>
+    <!-- Mobile Menu -->
     <div id="mobileMenu" class="mobile-menu md:hidden">
-      <div class="flex flex-col gap-1 pt-2 pb-1">
-        <a href="#projects" class="text-sm font-medium text-neutral-400 px-4 py-2 rounded-full hover:bg-white/5 hover:text-white transition-colors">Projects</a>
-        <a href="#contact" class="text-sm font-medium text-neutral-400 px-4 py-2 rounded-full hover:bg-white/5 hover:text-white transition-colors">Contact</a>
+      <div class="flex flex-col gap-0.5 pt-3 pb-2 border-t border-white/5 mt-2">
+        <a href="#hero" class="text-sm font-medium text-neutral-400 px-4 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-colors">Home</a>
+        <a href="#about" class="text-sm font-medium text-neutral-400 px-4 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-colors">About</a>
+        <a href="#skills" class="text-sm font-medium text-neutral-400 px-4 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-colors">Skills</a>
+        <a href="#experience" class="text-sm font-medium text-neutral-400 px-4 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-colors">Experience</a>
+        <a href="#projects" class="text-sm font-medium text-neutral-400 px-4 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-colors">Projects</a>
+        <a href="#contact" class="text-sm font-medium text-neutral-400 px-4 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-colors">Contact</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero" class="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-20">
-    <div class="relative z-10 max-w-5xl mx-auto text-center">
+  <section id="hero" class="relative min-h-screen flex items-center justify-center px-5 pt-28 pb-16 md:px-6 md:pt-32 md:pb-20">
+    <div class="relative z-10 max-w-5xl mx-auto text-center w-full">
       <!-- Badge -->
-      <div class="reveal inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass mb-8">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="text-xs font-medium text-neutral-400 tracking-wide">Open to Opportunities</span>
+      <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6 md:mb-8">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
+        <span class="text-[11px] md:text-xs font-medium text-neutral-400 tracking-wide">Open to Opportunities</span>
       </div>
 
       <!-- Name -->
-      <h1 class="reveal text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[1.05] mb-6" style="transition-delay:100ms;">
+      <h1 class="reveal text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[1.05] mb-4 md:mb-6" style="transition-delay:100ms;">
         <span class="text-gradient-subtle">Aarti</span><br/>
         <span class="text-gradient">Makwana</span>
       </h1>
 
       <!-- Title -->
-      <div class="reveal flex items-center justify-center gap-3 mb-8" style="transition-delay:200ms;">
-        <div class="h-px w-12 bg-gradient-to-r from-transparent to-indigo-500/50"></div>
-        <p class="text-lg md:text-xl font-light text-neutral-400 tracking-wide">Software Developer</p>
-        <div class="h-px w-12 bg-gradient-to-l from-transparent to-indigo-500/50"></div>
+      <div class="reveal flex items-center justify-center gap-3 mb-6 md:mb-8" style="transition-delay:200ms;">
+        <div class="h-px w-8 md:w-12 bg-gradient-to-r from-transparent to-indigo-500/50"></div>
+        <p class="text-base md:text-xl font-light text-neutral-400 tracking-wide">Software Developer</p>
+        <div class="h-px w-8 md:w-12 bg-gradient-to-l from-transparent to-indigo-500/50"></div>
       </div>
 
       <!-- Summary -->
-      <p class="reveal text-sm md:text-base font-light text-neutral-500 leading-relaxed max-w-2xl mx-auto mb-12" style="transition-delay:300ms;">
+      <p class="reveal text-sm md:text-base font-light text-neutral-500 leading-relaxed max-w-2xl mx-auto mb-10 md:mb-12 px-2" style="transition-delay:300ms;">
         Java Developer with 4.5 years of experience building scalable enterprise applications using Java, Spring Boot, Hibernate, REST APIs, and Microservices architecture.
       </p>
 
       <!-- CTA Buttons -->
-      <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4" style="transition-delay:400ms;">
-        <a href="#projects" class="group inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black text-sm font-medium rounded-full hover:bg-neutral-200 transition-colors">
+      <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 px-4" style="transition-delay:400ms;">
+        <a href="#projects" class="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5 bg-white text-black text-sm font-medium rounded-full hover:bg-neutral-200 transition-colors">
           View Projects
           <iconify-icon icon="lucide:arrow-down" width="16" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
         </a>
-        <a href="#contact" class="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-medium text-neutral-300 rounded-full border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all">
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5 text-sm font-medium text-neutral-300 rounded-full border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all">
           <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
           Get in Touch
         </a>
       </div>
 
       <!-- Stats -->
-      <div class="reveal grid grid-cols-3 gap-8 max-w-lg mx-auto mt-20" style="transition-delay:500ms;">
+      <div class="reveal grid grid-cols-3 gap-4 md:gap-8 max-w-md md:max-w-lg mx-auto mt-14 md:mt-20" style="transition-delay:500ms;">
         <div class="text-center">
           <div class="stat-number text-gradient" data-target="4.5">0</div>
-          <div class="text-xs text-neutral-500 mt-2 font-medium uppercase tracking-wider">Years Exp</div>
+          <div class="text-[10px] md:text-xs text-neutral-500 mt-1.5 md:mt-2 font-medium uppercase tracking-wider">Years Exp</div>
         </div>
         <div class="text-center">
           <div class="stat-number text-gradient" data-target="5">0</div>
-          <div class="text-xs text-neutral-500 mt-2 font-medium uppercase tracking-wider">Projects</div>
+          <div class="text-[10px] md:text-xs text-neutral-500 mt-1.5 md:mt-2 font-medium uppercase tracking-wider">Projects</div>
         </div>
         <div class="text-center">
           <div class="stat-number text-gradient" data-target="10">0</div>
-          <div class="text-xs text-neutral-500 mt-2 font-medium uppercase tracking-wider">Tech Stack</div>
+          <div class="text-[10px] md:text-xs text-neutral-500 mt-1.5 md:mt-2 font-medium uppercase tracking-wider">Tech Stack</div>
         </div>
       </div>
     </div>
 
     <!-- Scroll indicator -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float" style="animation-duration:4s;">
+    <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float" style="animation-duration:4s;">
       <span class="text-[10px] text-neutral-600 uppercase tracking-widest">Scroll</span>
       <div class="w-5 h-8 rounded-full border border-white/10 flex items-start justify-center p-1.5">
         <div class="w-1 h-2 bg-neutral-500 rounded-full animate-bounce"></div>
@@ -358,54 +347,54 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="relative py-24 md:py-32 px-6">
+  <section id="about" class="relative py-16 md:py-24 lg:py-32 px-5 md:px-6">
     <div class="max-w-6xl mx-auto">
-      <div class="reveal text-center mb-16">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-4 block">About Me</span>
-        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-gradient-subtle">Crafting Robust Backend Solutions</h2>
+      <div class="reveal text-center mb-10 md:mb-16">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-3 md:mb-4 block">About Me</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-gradient-subtle">Crafting Robust Backend Solutions</h2>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <!-- Left: Visual -->
-        <div class="reveal-card relative">
-          <div class="relative rounded-3xl overflow-hidden glass p-8 grid-pattern">
-            <!-- Code-like visual -->
-            <div class="space-y-3 font-mono text-sm">
-              <div class="flex items-center gap-2 mb-6">
-                <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
-                <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
-                <span class="text-neutral-600 text-xs ml-2">AartiMakwana.java</span>
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <!-- Left: Code Visual -->
+        <div class="reveal-card relative order-2 md:order-1">
+          <div class="relative rounded-2xl md:rounded-3xl overflow-hidden glass p-5 md:p-8 grid-pattern">
+            <div class="code-block">
+              <div class="space-y-2.5 md:space-y-3 font-mono text-xs md:text-sm min-w-[280px]">
+                <div class="flex items-center gap-2 mb-4 md:mb-6">
+                  <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500/60"></div>
+                  <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500/60"></div>
+                  <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500/60"></div>
+                  <span class="text-neutral-600 text-[10px] md:text-xs ml-2">AartiMakwana.java</span>
+                </div>
+                <div><span class="text-purple-400">public class</span> <span class="text-blue-400">AartiMakwana</span> <span class="text-neutral-500">{</span></div>
+                <div class="pl-4"><span class="text-purple-400">private</span> <span class="text-blue-400">String</span> role = <span class="text-emerald-400">"Software Developer"</span>;</div>
+                <div class="pl-4"><span class="text-purple-400">private</span> <span class="text-blue-400">double</span> exp = <span class="text-amber-400">4.5</span>;</div>
+                <div class="pl-4"><span class="text-purple-400">private</span> <span class="text-blue-400">String</span> loc = <span class="text-emerald-400">"Ahmedabad"</span>;</div>
+                <div class="pl-4"><span class="text-purple-400">private</span> <span class="text-blue-400">String</span>[] skills = <span class="text-neutral-500">{</span></div>
+                <div class="pl-8"><span class="text-emerald-400">"Java"</span>, <span class="text-emerald-400">"Spring Boot"</span>,</div>
+                <div class="pl-8"><span class="text-emerald-400">"Hibernate"</span>, <span class="text-emerald-400">"REST APIs"</span></div>
+                <div class="pl-4"><span class="text-neutral-500">}</span>;</div>
+                <div class="mt-1"><span class="text-neutral-500">}</span></div>
               </div>
-              <div><span class="text-purple-400">public class</span> <span class="text-blue-400">AartiMakwana</span> <span class="text-neutral-500">{</span></div>
-              <div class="pl-4"><span class="text-purple-400">private</span> <span class="text-blue-400">String</span> role = <span class="text-emerald-400">"Software Developer"</span>;</div>
-              <div class="pl-4"><span class="text-purple-400">private</span> <span class="text-blue-400">double</span> experience = <span class="text-amber-400">4.5</span>;</div>
-              <div class="pl-4"><span class="text-purple-400">private</span> <span class="text-blue-400">String</span> location = <span class="text-emerald-400">"Ahmedabad"</span>;</div>
-              <div class="pl-4"><span class="text-purple-400">private</span> <span class="text-blue-400">String</span>[] skills = <span class="text-neutral-500">{</span></div>
-              <div class="pl-8"><span class="text-emerald-400">"Java"</span>, <span class="text-emerald-400">"Spring Boot"</span>,</div>
-              <div class="pl-8"><span class="text-emerald-400">"Hibernate"</span>, <span class="text-emerald-400">"REST APIs"</span></div>
-              <div class="pl-4"><span class="text-neutral-500">}</span>;</div>
-              <div class="mt-2"><span class="text-neutral-500">}</span></div>
             </div>
-            <!-- Floating decoration -->
-            <div class="absolute -top-4 -right-4 w-20 h-20 border border-indigo-500/20 rounded-2xl animate-float" style="animation-delay: 1s;"></div>
-            <div class="absolute -bottom-3 -left-3 w-16 h-16 border border-purple-500/20 rounded-xl animate-float" style="animation-delay: 3s;"></div>
+            <div class="absolute -top-3 -right-3 w-14 h-14 md:w-20 md:h-20 border border-indigo-500/20 rounded-xl md:rounded-2xl animate-float hidden sm:block" style="animation-delay: 1s;"></div>
+            <div class="absolute -bottom-2 -left-2 w-12 h-12 md:w-16 md:h-16 border border-purple-500/20 rounded-lg md:rounded-xl animate-float hidden sm:block" style="animation-delay: 3s;"></div>
           </div>
         </div>
 
         <!-- Right: Text -->
-        <div class="reveal" style="transition-delay:200ms;">
-          <p class="text-sm md:text-base font-light text-neutral-400 leading-relaxed mb-6">
+        <div class="reveal order-1 md:order-2" style="transition-delay:200ms;">
+          <p class="text-sm md:text-base font-light text-neutral-400 leading-relaxed mb-5 md:mb-6">
             I'm a Java Developer with a proven track record of delivering robust solutions across government and enterprise projects at ISRO's Space Application Centre. I specialize in designing secure, high-performance backend systems and RESTful APIs.
           </p>
-          <p class="text-sm md:text-base font-light text-neutral-400 leading-relaxed mb-8">
-            My approach centers around clean code principles, performance optimization, and continuous improvement. I thrive in collaborative environments, working alongside scientists, engineers, and cross-functional teams to solve complex problems.
+          <p class="text-sm md:text-base font-light text-neutral-400 leading-relaxed mb-6 md:mb-8">
+            My approach centers around clean code principles, performance optimization, and continuous improvement. I thrive in collaborative environments, working alongside scientists, engineers, and cross-functional teams.
           </p>
-          <div class="flex flex-wrap gap-3">
-            <span class="tech-badge"><iconify-icon icon="lucide:shield-check" width="12"></iconify-icon> Secure Systems</span>
-            <span class="tech-badge"><iconify-icon icon="lucide:zap" width="12"></iconify-icon> High Performance</span>
-            <span class="tech-badge"><iconify-icon icon="lucide:git-branch" width="12"></iconify-icon> Clean Code</span>
-            <span class="tech-badge"><iconify-icon icon="lucide:users" width="12"></iconify-icon> Team Player</span>
+          <div class="flex flex-wrap gap-2 md:gap-3">
+            <span class="tech-badge text-[11px] md:text-xs"><iconify-icon icon="lucide:shield-check" width="11"></iconify-icon> Secure Systems</span>
+            <span class="tech-badge text-[11px] md:text-xs"><iconify-icon icon="lucide:zap" width="11"></iconify-icon> High Performance</span>
+            <span class="tech-badge text-[11px] md:text-xs"><iconify-icon icon="lucide:git-branch" width="11"></iconify-icon> Clean Code</span>
+            <span class="tech-badge text-[11px] md:text-xs"><iconify-icon icon="lucide:users" width="11"></iconify-icon> Team Player</span>
           </div>
         </div>
       </div>
@@ -413,195 +402,196 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="relative py-24 md:py-32 px-6">
+  <section id="skills" class="relative py-16 md:py-24 lg:py-32 px-5 md:px-6">
     <div class="max-w-6xl mx-auto">
-      <div class="reveal text-center mb-16">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-4 block">Technical Skills</span>
-        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-gradient-subtle">My Tech Arsenal</h2>
+      <div class="reveal text-center mb-10 md:mb-16">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-3 md:mb-4 block">Technical Skills</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-gradient-subtle">My Tech Arsenal</h2>
       </div>
 
-      <!-- Skill Categories Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         <!-- Languages -->
-        <div class="reveal-card hover-card glass rounded-2xl p-6" style="transition-delay:0ms;">
-          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-5">
-            <iconify-icon icon="lucide:code-2" width="22" class="text-blue-400"></iconify-icon>
+        <div class="reveal-card hover-card glass rounded-2xl p-5 md:p-6" style="transition-delay:0ms;">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 md:mb-5">
+            <iconify-icon icon="lucide:code-2" width="20" class="text-blue-400"></iconify-icon>
           </div>
-          <h3 class="text-base font-medium mb-1">Languages</h3>
-          <p class="text-xs text-neutral-500 mb-5">Core programming languages</p>
-          <div class="space-y-3">
+          <h3 class="text-sm md:text-base font-medium mb-1">Languages</h3>
+          <p class="text-[11px] md:text-xs text-neutral-500 mb-4 md:mb-5">Core programming languages</p>
+          <div class="space-y-2.5 md:space-y-3">
             <div>
-              <div class="flex justify-between text-xs mb-1.5"><span class="text-neutral-300">Java</span><span class="text-indigo-400">95%</span></div>
+              <div class="flex justify-between text-[11px] md:text-xs mb-1.5"><span class="text-neutral-300">Java</span><span class="text-indigo-400">95%</span></div>
               <div class="h-1.5 bg-white/5 rounded-full overflow-hidden"><div class="skill-bar-fill h-full bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full" style="--target-width:95%"></div></div>
             </div>
             <div>
-              <div class="flex justify-between text-xs mb-1.5"><span class="text-neutral-300">SQL</span><span class="text-indigo-400">85%</span></div>
+              <div class="flex justify-between text-[11px] md:text-xs mb-1.5"><span class="text-neutral-300">SQL</span><span class="text-indigo-400">85%</span></div>
               <div class="h-1.5 bg-white/5 rounded-full overflow-hidden"><div class="skill-bar-fill h-full bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full" style="--target-width:85%"></div></div>
             </div>
             <div>
-              <div class="flex justify-between text-xs mb-1.5"><span class="text-neutral-300">HTML/CSS</span><span class="text-indigo-400">75%</span></div>
+              <div class="flex justify-between text-[11px] md:text-xs mb-1.5"><span class="text-neutral-300">HTML/CSS</span><span class="text-indigo-400">75%</span></div>
               <div class="h-1.5 bg-white/5 rounded-full overflow-hidden"><div class="skill-bar-fill h-full bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full" style="--target-width:75%"></div></div>
             </div>
           </div>
         </div>
 
         <!-- Frameworks -->
-        <div class="reveal-card hover-card glass rounded-2xl p-6" style="transition-delay:100ms;">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-5">
-            <iconify-icon icon="lucide:layers" width="22" class="text-emerald-400"></iconify-icon>
+        <div class="reveal-card hover-card glass rounded-2xl p-5 md:p-6" style="transition-delay:100ms;">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 md:mb-5">
+            <iconify-icon icon="lucide:layers" width="20" class="text-emerald-400"></iconify-icon>
           </div>
-          <h3 class="text-base font-medium mb-1">Frameworks</h3>
-          <p class="text-xs text-neutral-500 mb-5">Application frameworks</p>
-          <div class="space-y-3">
+          <h3 class="text-sm md:text-base font-medium mb-1">Frameworks</h3>
+          <p class="text-[11px] md:text-xs text-neutral-500 mb-4 md:mb-5">Application frameworks</p>
+          <div class="space-y-2.5 md:space-y-3">
             <div>
-              <div class="flex justify-between text-xs mb-1.5"><span class="text-neutral-300">Spring Boot</span><span class="text-emerald-400">95%</span></div>
+              <div class="flex justify-between text-[11px] md:text-xs mb-1.5"><span class="text-neutral-300">Spring Boot</span><span class="text-emerald-400">95%</span></div>
               <div class="h-1.5 bg-white/5 rounded-full overflow-hidden"><div class="skill-bar-fill h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full" style="--target-width:95%"></div></div>
             </div>
             <div>
-              <div class="flex justify-between text-xs mb-1.5"><span class="text-neutral-300">Hibernate / JPA</span><span class="text-emerald-400">90%</span></div>
+              <div class="flex justify-between text-[11px] md:text-xs mb-1.5"><span class="text-neutral-300">Hibernate / JPA</span><span class="text-emerald-400">90%</span></div>
               <div class="h-1.5 bg-white/5 rounded-full overflow-hidden"><div class="skill-bar-fill h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full" style="--target-width:90%"></div></div>
             </div>
             <div>
-              <div class="flex justify-between text-xs mb-1.5"><span class="text-neutral-300">Spring Security</span><span class="text-emerald-400">88%</span></div>
+              <div class="flex justify-between text-[11px] md:text-xs mb-1.5"><span class="text-neutral-300">Spring Security</span><span class="text-emerald-400">88%</span></div>
               <div class="h-1.5 bg-white/5 rounded-full overflow-hidden"><div class="skill-bar-fill h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full" style="--target-width:88%"></div></div>
             </div>
           </div>
         </div>
 
         <!-- APIs & Web -->
-        <div class="reveal-card hover-card glass rounded-2xl p-6" style="transition-delay:200ms;">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-5">
-            <iconify-icon icon="lucide:globe" width="22" class="text-purple-400"></iconify-icon>
+        <div class="reveal-card hover-card glass rounded-2xl p-5 md:p-6" style="transition-delay:200ms;">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4 md:mb-5">
+            <iconify-icon icon="lucide:globe" width="20" class="text-purple-400"></iconify-icon>
           </div>
-          <h3 class="text-base font-medium mb-1">APIs & Web</h3>
-          <p class="text-xs text-neutral-500 mb-5">Web technologies</p>
-          <div class="space-y-3">
+          <h3 class="text-sm md:text-base font-medium mb-1">APIs & Web</h3>
+          <p class="text-[11px] md:text-xs text-neutral-500 mb-4 md:mb-5">Web technologies</p>
+          <div class="space-y-2.5 md:space-y-3">
             <div>
-              <div class="flex justify-between text-xs mb-1.5"><span class="text-neutral-300">RESTful APIs</span><span class="text-purple-400">95%</span></div>
+              <div class="flex justify-between text-[11px] md:text-xs mb-1.5"><span class="text-neutral-300">RESTful APIs</span><span class="text-purple-400">95%</span></div>
               <div class="h-1.5 bg-white/5 rounded-full overflow-hidden"><div class="skill-bar-fill h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" style="--target-width:95%"></div></div>
             </div>
             <div>
-              <div class="flex justify-between text-xs mb-1.5"><span class="text-neutral-300">Microservices</span><span class="text-purple-400">80%</span></div>
+              <div class="flex justify-between text-[11px] md:text-xs mb-1.5"><span class="text-neutral-300">Microservices</span><span class="text-purple-400">80%</span></div>
               <div class="h-1.5 bg-white/5 rounded-full overflow-hidden"><div class="skill-bar-fill h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" style="--target-width:80%"></div></div>
             </div>
             <div>
-              <div class="flex justify-between text-xs mb-1.5"><span class="text-neutral-300">JSP / Servlets</span><span class="text-purple-400">70%</span></div>
+              <div class="flex justify-between text-[11px] md:text-xs mb-1.5"><span class="text-neutral-300">JSP / Servlets</span><span class="text-purple-400">70%</span></div>
               <div class="h-1.5 bg-white/5 rounded-full overflow-hidden"><div class="skill-bar-fill h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" style="--target-width:70%"></div></div>
             </div>
           </div>
         </div>
 
         <!-- Databases -->
-        <div class="reveal-card hover-card glass rounded-2xl p-6" style="transition-delay:300ms;">
-          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-5">
-            <iconify-icon icon="lucide:database" width="22" class="text-amber-400"></iconify-icon>
+        <div class="reveal-card hover-card glass rounded-2xl p-5 md:p-6" style="transition-delay:300ms;">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4 md:mb-5">
+            <iconify-icon icon="lucide:database" width="20" class="text-amber-400"></iconify-icon>
           </div>
-          <h3 class="text-base font-medium mb-1">Databases</h3>
-          <p class="text-xs text-neutral-500 mb-5">Data management</p>
-          <div class="space-y-3">
+          <h3 class="text-sm md:text-base font-medium mb-1">Databases</h3>
+          <p class="text-[11px] md:text-xs text-neutral-500 mb-4 md:mb-5">Data management</p>
+          <div class="space-y-2.5 md:space-y-3">
             <div>
-              <div class="flex justify-between text-xs mb-1.5"><span class="text-neutral-300">MySQL</span><span class="text-amber-400">90%</span></div>
+              <div class="flex justify-between text-[11px] md:text-xs mb-1.5"><span class="text-neutral-300">MySQL</span><span class="text-amber-400">90%</span></div>
               <div class="h-1.5 bg-white/5 rounded-full overflow-hidden"><div class="skill-bar-fill h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full" style="--target-width:90%"></div></div>
             </div>
           </div>
         </div>
 
         <!-- Tools -->
-        <div class="reveal-card hover-card glass rounded-2xl p-6" style="transition-delay:400ms;">
-          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-5">
-            <iconify-icon icon="lucide:wrench" width="22" class="text-cyan-400"></iconify-icon>
+        <div class="reveal-card hover-card glass rounded-2xl p-5 md:p-6" style="transition-delay:400ms;">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4 md:mb-5">
+            <iconify-icon icon="lucide:wrench" width="20" class="text-cyan-400"></iconify-icon>
           </div>
-          <h3 class="text-base font-medium mb-1">Tools & IDEs</h3>
-          <p class="text-xs text-neutral-500 mb-5">Development toolchain</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Git</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Maven</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Eclipse</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">STS</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">VS Code</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Postman</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Bruno</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Sublime</span>
+          <h3 class="text-sm md:text-base font-medium mb-1">Tools & IDEs</h3>
+          <p class="text-[11px] md:text-xs text-neutral-500 mb-4 md:mb-5">Development toolchain</p>
+          <div class="flex flex-wrap gap-1.5 md:gap-2">
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Git</span>
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Maven</span>
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Eclipse</span>
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">STS</span>
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">VS Code</span>
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Postman</span>
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Bruno</span>
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Sublime</span>
           </div>
         </div>
 
         <!-- Frontend -->
-        <div class="reveal-card hover-card glass rounded-2xl p-6" style="transition-delay:500ms;">
-          <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center mb-5">
-            <iconify-icon icon="lucide:monitor" width="22" class="text-pink-400"></iconify-icon>
+        <div class="reveal-card hover-card glass rounded-2xl p-5 md:p-6" style="transition-delay:500ms;">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center mb-4 md:mb-5">
+            <iconify-icon icon="lucide:monitor" width="20" class="text-pink-400"></iconify-icon>
           </div>
-          <h3 class="text-base font-medium mb-1">Frontend</h3>
-          <p class="text-xs text-neutral-500 mb-5">UI technologies</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">HTML</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">CSS</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">React</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Bootstrap</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">JSP</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Liferay</span>
+          <h3 class="text-sm md:text-base font-medium mb-1">Frontend</h3>
+          <p class="text-[11px] md:text-xs text-neutral-500 mb-4 md:mb-5">UI technologies</p>
+          <div class="flex flex-wrap gap-1.5 md:gap-2">
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">HTML</span>
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">CSS</span>
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">React</span>
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Bootstrap</span>
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">JSP</span>
+            <span class="text-[11px] md:text-xs px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 text-neutral-300 border border-white/5">Liferay</span>
           </div>
         </div>
       </div>
 
-      <!-- Languages -->
-      <div class="reveal mt-12 glass rounded-2xl p-6 flex flex-wrap items-center justify-center gap-6 md:gap-10">
-        <span class="text-xs text-neutral-500 uppercase tracking-wider font-medium">Languages Spoken</span>
-        <div class="flex items-center gap-2"><span class="text-lg">🇮🇳</span><span class="text-sm text-neutral-300">English</span></div>
-        <div class="flex items-center gap-2"><span class="text-lg">🇮🇳</span><span class="text-sm text-neutral-300">Hindi</span></div>
-        <div class="flex items-center gap-2"><span class="text-lg">🇮🇳</span><span class="text-sm text-neutral-300">Gujarati</span></div>
+      <!-- Languages Spoken -->
+      <div class="reveal mt-8 md:mt-12 glass rounded-2xl p-4 md:p-6 flex flex-wrap items-center justify-center gap-4 md:gap-8">
+        <span class="text-[10px] md:text-xs text-neutral-500 uppercase tracking-wider font-medium">Spoken</span>
+        <div class="flex items-center gap-1.5"><span class="text-base md:text-lg">🇮🇳</span><span class="text-xs md:text-sm text-neutral-300">English</span></div>
+        <div class="flex items-center gap-1.5"><span class="text-base md:text-lg">🇮🇳</span><span class="text-xs md:text-sm text-neutral-300">Hindi</span></div>
+        <div class="flex items-center gap-1.5"><span class="text-base md:text-lg">🇮🇳</span><span class="text-xs md:text-sm text-neutral-300">Gujarati</span></div>
       </div>
     </div>
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="relative py-24 md:py-32 px-6">
+  <section id="experience" class="relative py-16 md:py-24 lg:py-32 px-5 md:px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="reveal text-center mb-16">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-4 block">Professional Experience</span>
-        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-gradient-subtle">Where I've Worked</h2>
+      <div class="reveal text-center mb-10 md:mb-16">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-3 md:mb-4 block">Professional Experience</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-gradient-subtle">Where I've Worked</h2>
       </div>
 
-      <div class="relative pl-14 md:pl-16">
+      <div class="relative pl-10 md:pl-16">
         <div class="timeline-line"></div>
 
         <!-- ISRO -->
-        <div class="reveal-card relative mb-12" style="transition-delay:0ms;">
+        <div class="reveal-card relative mb-8 md:mb-12" style="transition-delay:0ms;">
           <div class="timeline-dot"></div>
-          <div class="glass rounded-2xl p-6 md:p-8 hover-card">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+          <div class="glass rounded-2xl p-5 md:p-8 hover-card">
+            <div class="flex flex-col gap-2 mb-3 md:mb-4">
               <div>
-                <h3 class="text-lg font-medium">Java Developer</h3>
+                <h3 class="text-base md:text-lg font-medium">Java Developer</h3>
                 <p class="text-sm text-indigo-400 font-medium">Space Application Centre (ISRO)</p>
               </div>
-              <span class="text-xs font-medium text-neutral-500 bg-white/5 px-3 py-1.5 rounded-full border border-white/5 whitespace-nowrap self-start">Jan 2022 – Apr 2026</span>
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-[10px] md:text-xs font-medium text-neutral-500 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">Jan 2022 – Apr 2026</span>
+                <span class="text-[11px] md:text-xs text-neutral-500 flex items-center gap-1">
+                  <iconify-icon icon="lucide:map-pin" width="11"></iconify-icon> Ahmedabad, Gujarat
+                </span>
+              </div>
             </div>
-            <p class="text-xs text-neutral-500 mb-4 flex items-center gap-1.5">
-              <iconify-icon icon="lucide:map-pin" width="12"></iconify-icon> Ahmedabad, Gujarat
-            </p>
-            <ul class="space-y-3">
-              <li class="flex items-start gap-3 text-sm text-neutral-400 font-light leading-relaxed">
-                <iconify-icon icon="lucide:check-circle-2" width="16" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>
-                Developed and maintained enterprise-level web applications using Java, Spring Boot, Hibernate/JPA, and MySQL for multiple ISRO projects
+            <ul class="space-y-2.5">
+              <li class="flex items-start gap-2.5 text-[13px] md:text-sm text-neutral-400 font-light leading-relaxed">
+                <iconify-icon icon="lucide:check-circle-2" width="15" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>
+                Developed enterprise-level web applications using Java, Spring Boot, Hibernate/JPA, and MySQL for multiple ISRO projects
               </li>
-              <li class="flex items-start gap-3 text-sm text-neutral-400 font-light leading-relaxed">
-                <iconify-icon icon="lucide:check-circle-2" width="16" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>
-                Designed and implemented RESTful APIs and microservices for scalable and secure application development
+              <li class="flex items-start gap-2.5 text-[13px] md:text-sm text-neutral-400 font-light leading-relaxed">
+                <iconify-icon icon="lucide:check-circle-2" width="15" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>
+                Designed RESTful APIs and microservices for scalable and secure application development
               </li>
-              <li class="flex items-start gap-3 text-sm text-neutral-400 font-light leading-relaxed">
-                <iconify-icon icon="lucide:check-circle-2" width="16" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>
-                Implemented authentication & authorization using Spring Security with role-based access control (RBAC)
+              <li class="flex items-start gap-2.5 text-[13px] md:text-sm text-neutral-400 font-light leading-relaxed">
+                <iconify-icon icon="lucide:check-circle-2" width="15" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>
+                Implemented Spring Security with role-based access control (RBAC) for granular user permissions
               </li>
-              <li class="flex items-start gap-3 text-sm text-neutral-400 font-light leading-relaxed">
-                <iconify-icon icon="lucide:check-circle-2" width="16" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>
+              <li class="flex items-start gap-2.5 text-[13px] md:text-sm text-neutral-400 font-light leading-relaxed">
+                <iconify-icon icon="lucide:check-circle-2" width="15" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>
                 Integrated email notification systems for automated reminders and status updates
               </li>
-              <li class="flex items-start gap-3 text-sm text-neutral-400 font-light leading-relaxed">
-                <iconify-icon icon="lucide:check-circle-2" width="16" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>
-                Engineered robust reporting modules to track request fulfillment times and identify bottlenecks
+              <li class="flex items-start gap-2.5 text-[13px] md:text-sm text-neutral-400 font-light leading-relaxed">
+                <iconify-icon icon="lucide:check-circle-2" width="15" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>
+                Engineered reporting modules to track fulfillment times and identify bottlenecks
               </li>
-              <li class="flex items-start gap-3 text-sm text-neutral-400 font-light leading-relaxed">
-                <iconify-icon icon="lucide:check-circle-2" width="16" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>
-                Collaborated with scientists, engineers, and stakeholders to deliver high-quality software solutions
+              <li class="flex items-start gap-2.5 text-[13px] md:text-sm text-neutral-400 font-light leading-relaxed">
+                <iconify-icon icon="lucide:check-circle-2" width="15" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>
+                Collaborated with scientists, engineers, and stakeholders in Agile environments
               </li>
             </ul>
           </div>
@@ -610,33 +600,35 @@
         <!-- Aspire Soft Serv -->
         <div class="reveal-card relative" style="transition-delay:200ms;">
           <div class="timeline-dot secondary"></div>
-          <div class="glass rounded-2xl p-6 md:p-8 hover-card">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+          <div class="glass rounded-2xl p-5 md:p-8 hover-card">
+            <div class="flex flex-col gap-2 mb-3 md:mb-4">
               <div>
-                <h3 class="text-lg font-medium">Associate Software Engineer</h3>
+                <h3 class="text-base md:text-lg font-medium">Associate Software Engineer</h3>
                 <p class="text-sm text-purple-400 font-medium">Aspire Soft Serv</p>
               </div>
-              <span class="text-xs font-medium text-neutral-500 bg-white/5 px-3 py-1.5 rounded-full border border-white/5 whitespace-nowrap self-start">Jun 2021 – Jun 2022</span>
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-[10px] md:text-xs font-medium text-neutral-500 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">Jun 2021 – Jun 2022</span>
+                <span class="text-[11px] md:text-xs text-neutral-500 flex items-center gap-1">
+                  <iconify-icon icon="lucide:map-pin" width="11"></iconify-icon> Ahmedabad, Gujarat
+                </span>
+              </div>
             </div>
-            <p class="text-xs text-neutral-500 mb-4 flex items-center gap-1.5">
-              <iconify-icon icon="lucide:map-pin" width="12"></iconify-icon> Ahmedabad, Gujarat
-            </p>
-            <ul class="space-y-3">
-              <li class="flex items-start gap-3 text-sm text-neutral-400 font-light leading-relaxed">
-                <iconify-icon icon="lucide:check-circle-2" width="16" class="text-purple-400 mt-0.5 flex-shrink-0"></iconify-icon>
-                Started as a trainee and rapidly acquired proficiency in Java, Spring Boot, REST API development
+            <ul class="space-y-2.5">
+              <li class="flex items-start gap-2.5 text-[13px] md:text-sm text-neutral-400 font-light leading-relaxed">
+                <iconify-icon icon="lucide:check-circle-2" width="15" class="text-purple-400 mt-0.5 flex-shrink-0"></iconify-icon>
+                Started as trainee, rapidly acquired proficiency in Java, Spring Boot, REST API development
               </li>
-              <li class="flex items-start gap-3 text-sm text-neutral-400 font-light leading-relaxed">
-                <iconify-icon icon="lucide:check-circle-2" width="16" class="text-purple-400 mt-0.5 flex-shrink-0"></iconify-icon>
+              <li class="flex items-start gap-2.5 text-[13px] md:text-sm text-neutral-400 font-light leading-relaxed">
+                <iconify-icon icon="lucide:check-circle-2" width="15" class="text-purple-400 mt-0.5 flex-shrink-0"></iconify-icon>
                 Developed web content, portlets, and themes using the Liferay Framework
               </li>
-              <li class="flex items-start gap-3 text-sm text-neutral-400 font-light leading-relaxed">
-                <iconify-icon icon="lucide:check-circle-2" width="16" class="text-purple-400 mt-0.5 flex-shrink-0"></iconify-icon>
-                Contributed to full-stack development tasks including frontend UI and backend API integration
+              <li class="flex items-start gap-2.5 text-[13px] md:text-sm text-neutral-400 font-light leading-relaxed">
+                <iconify-icon icon="lucide:check-circle-2" width="15" class="text-purple-400 mt-0.5 flex-shrink-0"></iconify-icon>
+                Contributed to full-stack development including frontend UI and backend API integration
               </li>
-              <li class="flex items-start gap-3 text-sm text-neutral-400 font-light leading-relaxed">
-                <iconify-icon icon="lucide:check-circle-2" width="16" class="text-purple-400 mt-0.5 flex-shrink-0"></iconify-icon>
-                Participated in code reviews, testing, and debugging to ensure quality software delivery
+              <li class="flex items-start gap-2.5 text-[13px] md:text-sm text-neutral-400 font-light leading-relaxed">
+                <iconify-icon icon="lucide:check-circle-2" width="15" class="text-purple-400 mt-0.5 flex-shrink-0"></iconify-icon>
+                Participated in code reviews, testing, and debugging for quality delivery
               </li>
             </ul>
           </div>
@@ -646,149 +638,150 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="relative py-24 md:py-32 px-6">
+  <section id="projects" class="relative py-16 md:py-24 lg:py-32 px-5 md:px-6">
     <div class="max-w-6xl mx-auto">
-      <div class="reveal text-center mb-16">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-4 block">Key Projects</span>
-        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-gradient-subtle">Featured Work</h2>
-        <p class="text-sm text-neutral-500 mt-4 max-w-lg mx-auto font-light">Enterprise systems built for ISRO and Space Application Centre — details confidential under NDA</p>
+      <div class="reveal text-center mb-10 md:mb-16">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-3 md:mb-4 block">Key Projects</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-gradient-subtle">Featured Work</h2>
+        <p class="text-xs md:text-sm text-neutral-500 mt-3 md:mt-4 max-w-lg mx-auto font-light px-2">Enterprise systems built for ISRO & SAC — details confidential under NDA</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <!-- Project 1 -->
-        <div class="reveal-card project-card relative glass rounded-2xl p-6 md:p-8 hover-card overflow-hidden" style="transition-delay:0ms;">
+        <div class="reveal-card project-card relative glass rounded-2xl p-5 md:p-8 hover-card overflow-hidden" style="transition-delay:0ms;">
           <div class="relative z-10">
-            <div class="flex items-center justify-between mb-5">
-              <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center">
-                <iconify-icon icon="lucide:monitor-check" width="20" class="text-indigo-400"></iconify-icon>
+            <div class="flex items-center justify-between mb-4 md:mb-5">
+              <div class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center">
+                <iconify-icon icon="lucide:monitor-check" width="18" class="text-indigo-400"></iconify-icon>
               </div>
-              <span class="text-[10px] font-medium uppercase tracking-wider text-neutral-500 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">ISRO</span>
+              <span class="text-[9px] md:text-[10px] font-medium uppercase tracking-wider text-neutral-500 bg-white/5 px-2 py-0.5 md:px-2.5 md:py-1 rounded-full border border-white/5">ISRO</span>
             </div>
-            <h3 class="text-base font-medium mb-2">PC/Printer Complaint Management System</h3>
-            <p class="text-sm text-neutral-500 font-light leading-relaxed mb-5">
-              Streamlined reporting, tracking, and resolution of IT-related issues. Employees register complaints while administrators and support engineers manage tickets through a centralized dashboard.
+            <h3 class="text-sm md:text-base font-medium mb-1.5 md:mb-2">PC/Printer Complaint Management</h3>
+            <p class="text-xs md:text-sm text-neutral-500 font-light leading-relaxed mb-4">
+              Streamlined IT issue reporting, tracking, and resolution through a centralized dashboard with RBAC and email notifications.
             </p>
-            <ul class="space-y-2 mb-5">
-              <li class="flex items-start gap-2 text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="12" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>Secure auth with RBAC via Spring Security</li>
-              <li class="flex items-start gap-2 text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="12" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>RESTful APIs with MySQL for complaint tracking</li>
-              <li class="flex items-start gap-2 text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="12" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>Automated email notifications & reporting</li>
+            <ul class="space-y-1.5 mb-4">
+              <li class="flex items-start gap-2 text-[11px] md:text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="11" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>Spring Security RBAC</li>
+              <li class="flex items-start gap-2 text-[11px] md:text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="11" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>RESTful APIs + MySQL tracking</li>
+              <li class="flex items-start gap-2 text-[11px] md:text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="11" class="text-indigo-400 mt-0.5 flex-shrink-0"></iconify-icon>Automated email & reporting</li>
             </ul>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Java</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Spring Boot</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Spring Security</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Hibernate</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">MySQL</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">REST APIs</span>
+            <div class="flex flex-wrap gap-1 md:gap-1.5">
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Java</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Spring Boot</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Security</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Hibernate</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">MySQL</span>
             </div>
           </div>
         </div>
 
         <!-- Project 2 -->
-        <div class="reveal-card project-card relative glass rounded-2xl p-6 md:p-8 hover-card overflow-hidden" style="transition-delay:100ms;">
+        <div class="reveal-card project-card relative glass rounded-2xl p-5 md:p-8 hover-card overflow-hidden" style="transition-delay:100ms;">
           <div class="relative z-10">
-            <div class="flex items-center justify-between mb-5">
-              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-                <iconify-icon icon="lucide:phone" width="20" class="text-emerald-400"></iconify-icon>
+            <div class="flex items-center justify-between mb-4 md:mb-5">
+              <div class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+                <iconify-icon icon="lucide:phone" width="18" class="text-emerald-400"></iconify-icon>
               </div>
-              <span class="text-[10px] font-medium uppercase tracking-wider text-neutral-500 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">ISRO</span>
+              <span class="text-[9px] md:text-[10px] font-medium uppercase tracking-wider text-neutral-500 bg-white/5 px-2 py-0.5 md:px-2.5 md:py-1 rounded-full border border-white/5">ISRO</span>
             </div>
-            <h3 class="text-base font-medium mb-2">Telephone Request Management System</h3>
-            <p class="text-sm text-neutral-500 font-light leading-relaxed mb-5">
-              Custom module for managing telephone requests, approvals, and problem resolution with integrated email reminders and robust reporting for actionable insights.
+            <h3 class="text-sm md:text-base font-medium mb-1.5 md:mb-2">Telephone Request Management</h3>
+            <p class="text-xs md:text-sm text-neutral-500 font-light leading-relaxed mb-4">
+              Custom module for telephone request lifecycle — submissions, approvals, resolution, with email reminders and bottleneck reporting.
             </p>
-            <ul class="space-y-2 mb-5">
-              <li class="flex items-start gap-2 text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="12" class="text-emerald-400 mt-0.5 flex-shrink-0"></iconify-icon>Secure auth & authorization module</li>
-              <li class="flex items-start gap-2 text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="12" class="text-emerald-400 mt-0.5 flex-shrink-0"></iconify-icon>Request lifecycle management with approvals</li>
-              <li class="flex items-start gap-2 text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="12" class="text-emerald-400 mt-0.5 flex-shrink-0"></iconify-icon>Fulfillment time tracking & bottleneck analysis</li>
+            <ul class="space-y-1.5 mb-4">
+              <li class="flex items-start gap-2 text-[11px] md:text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="11" class="text-emerald-400 mt-0.5 flex-shrink-0"></iconify-icon>Auth & authorization module</li>
+              <li class="flex items-start gap-2 text-[11px] md:text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="11" class="text-emerald-400 mt-0.5 flex-shrink-0"></iconify-icon>Approval workflow engine</li>
+              <li class="flex items-start gap-2 text-[11px] md:text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="11" class="text-emerald-400 mt-0.5 flex-shrink-0"></iconify-icon>Fulfillment time analytics</li>
             </ul>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Java</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Spring Boot</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Spring Security</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">MySQL</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Maven</span>
+            <div class="flex flex-wrap gap-1 md:gap-1.5">
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Java</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Spring Boot</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Security</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">MySQL</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Maven</span>
             </div>
           </div>
         </div>
 
         <!-- Project 3 -->
-        <div class="reveal-card project-card relative glass rounded-2xl p-6 md:p-8 hover-card overflow-hidden" style="transition-delay:200ms;">
+        <div class="reveal-card project-card relative glass rounded-2xl p-5 md:p-8 hover-card overflow-hidden" style="transition-delay:200ms;">
           <div class="relative z-10">
-            <div class="flex items-center justify-between mb-5">
-              <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
-                <iconify-icon icon="lucide:car" width="20" class="text-amber-400"></iconify-icon>
+            <div class="flex items-center justify-between mb-4 md:mb-5">
+              <div class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+                <iconify-icon icon="lucide:car" width="18" class="text-amber-400"></iconify-icon>
               </div>
-              <span class="text-[10px] font-medium uppercase tracking-wider text-neutral-500 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">ISRO</span>
+              <span class="text-[9px] md:text-[10px] font-medium uppercase tracking-wider text-neutral-500 bg-white/5 px-2 py-0.5 md:px-2.5 md:py-1 rounded-full border border-white/5">ISRO</span>
             </div>
-            <h3 class="text-base font-medium mb-2">Hire Taxi Management System</h3>
-            <p class="text-sm text-neutral-500 font-light leading-relaxed mb-5">
-              Streamlined vehicle booking and transportation operations. Employees request taxis, manage bookings, and approve requests through a centralized platform.
+            <h3 class="text-sm md:text-base font-medium mb-1.5 md:mb-2">Hire Taxi Management System</h3>
+            <p class="text-xs md:text-sm text-neutral-500 font-light leading-relaxed mb-4">
+              Vehicle booking and transportation platform — employees request taxis, manage bookings, approve requests centrally.
             </p>
-            <ul class="space-y-2 mb-5">
-              <li class="flex items-start gap-2 text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="12" class="text-amber-400 mt-0.5 flex-shrink-0"></iconify-icon>Secure registration & login with Spring Security</li>
-              <li class="flex items-start gap-2 text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="12" class="text-amber-400 mt-0.5 flex-shrink-0"></iconify-icon>Booking management & approval workflow</li>
-              <li class="flex items-start gap-2 text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="12" class="text-amber-400 mt-0.5 flex-shrink-0"></iconify-icon>Inside-outside taxi categorization</li>
+            <ul class="space-y-1.5 mb-4">
+              <li class="flex items-start gap-2 text-[11px] md:text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="11" class="text-amber-400 mt-0.5 flex-shrink-0"></iconify-icon>Spring Security auth</li>
+              <li class="flex items-start gap-2 text-[11px] md:text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="11" class="text-amber-400 mt-0.5 flex-shrink-0"></iconify-icon>Booking & approval workflow</li>
+              <li class="flex items-start gap-2 text-[11px] md:text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="11" class="text-amber-400 mt-0.5 flex-shrink-0"></iconify-icon>Inside-outside categorization</li>
             </ul>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Java</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Spring Boot</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Spring Security</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">MySQL</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">REST APIs</span>
+            <div class="flex flex-wrap gap-1 md:gap-1.5">
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Java</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Spring Boot</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Security</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">MySQL</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">REST APIs</span>
             </div>
           </div>
         </div>
 
         <!-- Project 4 -->
-        <div class="reveal-card project-card relative glass rounded-2xl p-6 md:p-8 hover-card overflow-hidden" style="transition-delay:300ms;">
+        <div class="reveal-card project-card relative glass rounded-2xl p-5 md:p-8 hover-card overflow-hidden" style="transition-delay:300ms;">
           <div class="relative z-10">
-            <div class="flex items-center justify-between mb-5">
-              <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
-                <iconify-icon icon="lucide:shield" width="20" class="text-cyan-400"></iconify-icon>
+            <div class="flex items-center justify-between mb-4 md:mb-5">
+              <div class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
+                <iconify-icon icon="lucide:shield" width="18" class="text-cyan-400"></iconify-icon>
               </div>
-              <span class="text-[10px] font-medium uppercase tracking-wider text-neutral-500 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">SAC</span>
+              <span class="text-[9px] md:text-[10px] font-medium uppercase tracking-wider text-neutral-500 bg-white/5 px-2 py-0.5 md:px-2.5 md:py-1 rounded-full border border-white/5">SAC</span>
             </div>
-            <h3 class="text-base font-medium mb-2">CISF Equipment Management System</h3>
-            <p class="text-sm text-neutral-500 font-light leading-relaxed mb-5">
-              Web-based system to efficiently manage and track organizational assets — equipment inventory, allocation, maintenance tracking, and reporting.
+            <h3 class="text-sm md:text-base font-medium mb-1.5 md:mb-2">CISF Equipment Management</h3>
+            <p class="text-xs md:text-sm text-neutral-500 font-light leading-relaxed mb-4">
+              Asset tracking system — equipment inventory, allocation, maintenance scheduling, and utilization reporting.
             </p>
-            <ul class="space-y-2 mb-5">
-              <li class="flex items-start gap-2 text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="12" class="text-cyan-400 mt-0.5 flex-shrink-0"></iconify-icon>JWT authentication & RBAC</li>
-              <li class="flex items-start gap-2 text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="12" class="text-cyan-400 mt-0.5 flex-shrink-0"></iconify-icon>Equipment inventory & asset allocation</li>
-              <li class="flex items-start gap-2 text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="12" class="text-cyan-400 mt-0.5 flex-shrink-0"></iconify-icon>Maintenance schedules & utilization reports</li>
+            <ul class="space-y-1.5 mb-4">
+              <li class="flex items-start gap-2 text-[11px] md:text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="11" class="text-cyan-400 mt-0.5 flex-shrink-0"></iconify-icon>JWT authentication & RBAC</li>
+              <li class="flex items-start gap-2 text-[11px] md:text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="11" class="text-cyan-400 mt-0.5 flex-shrink-0"></iconify-icon>Inventory & allocation tracking</li>
+              <li class="flex items-start gap-2 text-[11px] md:text-xs text-neutral-400"><iconify-icon icon="lucide:chevron-right" width="11" class="text-cyan-400 mt-0.5 flex-shrink-0"></iconify-icon>Maintenance & utilization reports</li>
             </ul>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Spring Boot</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">MySQL</span>
-              <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">JWT Auth</span>
+            <div class="flex flex-wrap gap-1 md:gap-1.5">
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Spring Boot</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">MySQL</span>
+              <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">JWT Auth</span>
             </div>
           </div>
         </div>
 
         <!-- Project 5 - Full Width -->
-        <div class="reveal-card project-card relative glass rounded-2xl p-6 md:p-8 hover-card overflow-hidden md:col-span-2" style="transition-delay:400ms;">
-          <div class="relative z-10 flex flex-col md:flex-row md:items-start gap-6">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
-                <iconify-icon icon="lucide:folder-kanban" width="20" class="text-pink-400"></iconify-icon>
+        <div class="reveal-card project-card relative glass rounded-2xl p-5 md:p-8 hover-card overflow-hidden md:col-span-2" style="transition-delay:400ms;">
+          <div class="relative z-10">
+            <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
+              <div class="flex-shrink-0">
+                <div class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
+                  <iconify-icon icon="lucide:folder-kanban" width="18" class="text-pink-400"></iconify-icon>
+                </div>
               </div>
-            </div>
-            <div class="flex-1">
-              <div class="flex items-center gap-3 mb-2">
-                <h3 class="text-base font-medium">Project Proposal and Management System</h3>
-                <span class="text-[10px] font-medium uppercase tracking-wider text-neutral-500 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">ISRO</span>
-              </div>
-              <p class="text-sm text-neutral-500 font-light leading-relaxed mb-4">
-                Streamlined the submission, review, approval, and tracking of project proposals across multiple ISRO centres. Users create, manage, and monitor project lifecycles through a centralized platform with secure role-based authorization.
-              </p>
-              <div class="flex flex-wrap gap-1.5">
-                <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Spring Boot</span>
-                <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Spring Security</span>
-                <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Hibernate/JPA</span>
-                <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">MySQL</span>
-                <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">REST APIs</span>
-                <span class="text-[10px] px-2 py-1 rounded bg-white/5 text-neutral-400">Multi-centre</span>
+              <div class="flex-1">
+                <div class="flex flex-wrap items-center gap-2 mb-1.5 md:mb-2">
+                  <h3 class="text-sm md:text-base font-medium">Project Proposal and Management System</h3>
+                  <span class="text-[9px] md:text-[10px] font-medium uppercase tracking-wider text-neutral-500 bg-white/5 px-2 py-0.5 md:px-2.5 md:py-1 rounded-full border border-white/5">ISRO</span>
+                </div>
+                <p class="text-xs md:text-sm text-neutral-500 font-light leading-relaxed mb-3 md:mb-4">
+                  Streamlined submission, review, approval, and tracking of project proposals across multiple ISRO centres. Users create, manage, and monitor project lifecycles through a centralized platform with secure role-based authorization.
+                </p>
+                <div class="flex flex-wrap gap-1 md:gap-1.5">
+                  <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Spring Boot</span>
+                  <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Security</span>
+                  <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Hibernate/JPA</span>
+                  <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">MySQL</span>
+                  <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">REST APIs</span>
+                  <span class="text-[9px] md:text-[10px] px-1.5 py-0.5 md:px-2 md:py-1 rounded bg-white/5 text-neutral-400">Multi-centre</span>
+                </div>
               </div>
             </div>
           </div>
@@ -798,32 +791,31 @@
   </section>
 
   <!-- Education Section -->
-  <section id="education" class="relative py-24 md:py-32 px-6">
+  <section id="education" class="relative py-16 md:py-24 lg:py-32 px-5 md:px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="reveal text-center mb-16">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-4 block">Education</span>
-        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-gradient-subtle">Academic Background</h2>
+      <div class="reveal text-center mb-10 md:mb-16">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-3 md:mb-4 block">Education</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-gradient-subtle">Academic Background</h2>
       </div>
 
       <div class="reveal-card max-w-2xl mx-auto">
-        <div class="glass rounded-2xl p-8 hover-card relative overflow-hidden">
-          <!-- Decorative gradient -->
-          <div class="absolute top-0 right-0 w-40 h-40 bg-indigo-500/5 rounded-full -translate-y-1/2 translate-x-1/2" style="filter:blur(60px);"></div>
+        <div class="glass rounded-2xl p-5 md:p-8 hover-card relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 md:w-40 md:h-40 bg-indigo-500/5 rounded-full -translate-y-1/2 translate-x-1/2" style="filter:blur(60px);"></div>
           <div class="relative z-10">
-            <div class="flex items-start gap-5">
-              <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center flex-shrink-0">
-                <iconify-icon icon="lucide:graduation-cap" width="26" class="text-indigo-400"></iconify-icon>
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4 md:gap-5">
+              <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center flex-shrink-0">
+                <iconify-icon icon="lucide:graduation-cap" width="22" class="text-indigo-400"></iconify-icon>
               </div>
               <div>
-                <h3 class="text-lg font-medium mb-1">MSc in Computer Applications & Information Technology</h3>
-                <p class="text-sm text-indigo-400 font-medium mb-2">K S School of Business Management, Gujarat University</p>
-                <p class="text-xs text-neutral-500 flex items-center gap-1.5 mb-4">
-                  <iconify-icon icon="lucide:map-pin" width="12"></iconify-icon> Ahmedabad
-                  <span class="mx-2">·</span>
-                  <iconify-icon icon="lucide:calendar" width="12"></iconify-icon> 2016 – 2021
+                <h3 class="text-sm md:text-lg font-medium mb-1">MSc Computer Applications & IT</h3>
+                <p class="text-xs md:text-sm text-indigo-400 font-medium mb-1.5 md:mb-2">K S School of Business Management, Gujarat University</p>
+                <p class="text-[11px] md:text-xs text-neutral-500 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mb-3 md:mb-4">
+                  <span class="flex items-center gap-1"><iconify-icon icon="lucide:map-pin" width="11"></iconify-icon> Ahmedabad</span>
+                  <span class="hidden sm:inline">·</span>
+                  <span class="flex items-center gap-1"><iconify-icon icon="lucide:calendar" width="11"></iconify-icon> 2016 – 2021</span>
                 </p>
-                <p class="text-sm text-neutral-500 font-light leading-relaxed">
-                  Comprehensive study of computer science fundamentals, software engineering, database management, and information technology applications.
+                <p class="text-xs md:text-sm text-neutral-500 font-light leading-relaxed">
+                  Computer science fundamentals, software engineering, database management, and information technology applications.
                 </p>
               </div>
             </div>
@@ -834,51 +826,51 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="relative py-24 md:py-32 px-6">
+  <section id="contact" class="relative py-16 md:py-24 lg:py-32 px-5 md:px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="reveal text-center mb-16">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-4 block">Get in Touch</span>
-        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-gradient-subtle">Let's Connect</h2>
-        <p class="text-sm text-neutral-500 mt-4 max-w-md mx-auto font-light">Interested in collaborating or have an opportunity? I'd love to hear from you.</p>
+      <div class="reveal text-center mb-10 md:mb-16">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-3 md:mb-4 block">Get in Touch</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-gradient-subtle">Let's Connect</h2>
+        <p class="text-xs md:text-sm text-neutral-500 mt-3 md:mt-4 max-w-md mx-auto font-light px-2">Interested in collaborating or have an opportunity? I'd love to hear from you.</p>
       </div>
 
-      <div class="reveal-card max-w-2xl mx-auto space-y-4">
+      <div class="reveal-card max-w-2xl mx-auto space-y-3 md:space-y-4">
         <a href="mailto:aartimakwana75@gmail.com" class="contact-link group">
-          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-            <iconify-icon icon="lucide:mail" width="20" class="text-indigo-400"></iconify-icon>
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center flex-shrink-0">
+            <iconify-icon icon="lucide:mail" width="18" class="text-indigo-400"></iconify-icon>
           </div>
-          <div class="flex-1">
-            <p class="text-xs text-neutral-500 mb-0.5">Email</p>
-            <p class="text-sm text-neutral-200">aartimakwana75@gmail.com</p>
+          <div class="flex-1 min-w-0">
+            <p class="text-[11px] md:text-xs text-neutral-500 mb-0.5">Email</p>
+            <p class="text-xs md:text-sm text-neutral-200 truncate">aartimakwana75@gmail.com</p>
           </div>
-          <iconify-icon icon="lucide:arrow-right" width="16" class="text-neutral-600 group-hover:text-indigo-400 group-hover:translate-x-1 transition-all"></iconify-icon>
+          <iconify-icon icon="lucide:arrow-right" width="14" class="text-neutral-600 flex-shrink-0"></iconify-icon>
         </a>
 
         <a href="tel:+918200356685" class="contact-link group">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-            <iconify-icon icon="lucide:phone" width="20" class="text-emerald-400"></iconify-icon>
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0">
+            <iconify-icon icon="lucide:phone" width="18" class="text-emerald-400"></iconify-icon>
           </div>
-          <div class="flex-1">
-            <p class="text-xs text-neutral-500 mb-0.5">Phone</p>
-            <p class="text-sm text-neutral-200">+91-8200356685</p>
+          <div class="flex-1 min-w-0">
+            <p class="text-[11px] md:text-xs text-neutral-500 mb-0.5">Phone</p>
+            <p class="text-xs md:text-sm text-neutral-200">+91-8200356685</p>
           </div>
-          <iconify-icon icon="lucide:arrow-right" width="16" class="text-neutral-600 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all"></iconify-icon>
+          <iconify-icon icon="lucide:arrow-right" width="14" class="text-neutral-600 flex-shrink-0"></iconify-icon>
         </a>
 
-        <div class="contact-link group cursor-default">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-            <iconify-icon icon="lucide:map-pin" width="20" class="text-purple-400"></iconify-icon>
+        <div class="contact-link cursor-default">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0">
+            <iconify-icon icon="lucide:map-pin" width="18" class="text-purple-400"></iconify-icon>
           </div>
-          <div class="flex-1">
-            <p class="text-xs text-neutral-500 mb-0.5">Location</p>
-            <p class="text-sm text-neutral-200">Ahmedabad, Gujarat, India</p>
+          <div class="flex-1 min-w-0">
+            <p class="text-[11px] md:text-xs text-neutral-500 mb-0.5">Location</p>
+            <p class="text-xs md:text-sm text-neutral-200">Ahmedabad, Gujarat, India</p>
           </div>
         </div>
 
-        <!-- Download Resume Button -->
-        <div class="pt-6 text-center">
-          <button id="downloadBtn" class="group inline-flex items-center gap-3 px-8 py-4 bg-white text-black text-sm font-medium rounded-full hover:bg-neutral-200 transition-all glow-indigo">
-            <iconify-icon icon="lucide:download" width="18" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
+        <!-- Download Resume -->
+        <div class="pt-5 md:pt-6 text-center">
+          <button id="downloadBtn" class="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 md:px-8 md:py-4 bg-white text-black text-sm font-medium rounded-full hover:bg-neutral-200 transition-all glow-indigo w-full sm:w-auto">
+            <iconify-icon icon="lucide:download" width="17" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
             Download Resume
           </button>
         </div>
@@ -887,15 +879,15 @@
   </section>
 
   <!-- Footer -->
-  <footer class="relative py-12 px-6 border-t border-white/5">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-xs text-neutral-600">
+  <footer class="relative py-10 md:py-12 px-5 md:px-6 border-t border-white/5">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-[11px] md:text-xs text-neutral-600">
         © 2025 Aarti Makwana. Crafted with precision.
       </p>
       <div class="flex items-center gap-1">
-        <span class="text-xs text-neutral-600">Built with</span>
-        <iconify-icon icon="lucide:heart" width="12" class="text-indigo-500 mx-1"></iconify-icon>
-        <span class="text-xs text-neutral-600">Java & Spring Boot</span>
+        <span class="text-[11px] md:text-xs text-neutral-600">Built with</span>
+        <iconify-icon icon="lucide:heart" width="11" class="text-indigo-500 mx-0.5"></iconify-icon>
+        <span class="text-[11px] md:text-xs text-neutral-600">Java & Spring Boot</span>
       </div>
     </div>
   </footer>
@@ -909,12 +901,21 @@
     // Mobile menu toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    let menuOpen = false;
+
     mobileToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
       mobileMenu.classList.toggle('open');
+      menuIcon.setAttribute('icon', menuOpen ? 'lucide:x' : 'lucide:menu');
     });
-    // Close mobile menu on link click
+
     mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuOpen = false;
+        menuIcon.setAttribute('icon', 'lucide:menu');
+      });
     });
 
     // Smooth scroll
@@ -923,7 +924,9 @@
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const offset = 80;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
         }
       });
     });
@@ -941,7 +944,7 @@
           }, parseInt(delay));
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     revealElements.forEach(el => observer.observe(el));
 
@@ -951,7 +954,7 @@
           entry.target.classList.add('active');
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
 
     skillBars.forEach(el => skillObserver.observe(el));
 
@@ -969,7 +972,6 @@
           function update(now) {
             const elapsed = now - start;
             const progress = Math.min(elapsed / duration, 1);
-            // Ease out cubic
             const eased = 1 - Math.pow(1 - progress, 3);
             const current = eased * target;
             el.textContent = isDecimal ? current.toFixed(1) : Math.round(current);
@@ -983,7 +985,7 @@
 
     statNumbers.forEach(el => counterObserver.observe(el));
 
-    // Toast function
+    // Toast
     function showToast(msg) {
       const toast = document.getElementById('toast');
       const toastMsg = document.getElementById('toastMsg');
@@ -992,12 +994,11 @@
       setTimeout(() => toast.classList.remove('show'), 3000);
     }
 
-    // Download button
     document.getElementById('downloadBtn').addEventListener('click', () => {
-      showToast('📄 Resume download would start here — connect to your actual PDF file.');
+      showToast('📄 Connect your actual PDF to enable download.');
     });
 
-    // Active nav highlight on scroll
+    // Active nav highlight
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
 
@@ -1009,7 +1010,6 @@
           current = section.getAttribute('id');
         }
       });
-
       navLinks.forEach(link => {
         link.classList.remove('text-white', 'font-semibold');
         link.classList.add('text-neutral-400', 'font-medium');
